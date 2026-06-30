@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Analytics Dashboard</title>
+
+    <link rel="stylesheet"
+href="{{ url_for('static', filename='dashboard.css') }}">
+    <style>
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+            margin-top:15px;
+        }
+
+        table,th,td{
+            border:1px solid #ddd;
+        }
+
+        th{
+            background:#0f4c81;
+            color:white;
+            padding:10px;
+        }
+
+        td{
+            padding:10px;
+            text-align:center;
+        }
+
+        .card{
+            background:#f4f7fc;
+            padding:15px;
+            margin:15px 0;
+            border-radius:10px;
+        }
+
+        img{
+            width:100%;
+            margin-top:15px;
+            border-radius:10px;
+        }
+
+        ul{
+            padding-left:20px;
+        }
+
+        hr{
+            margin:25px 0;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>📊 Analytics Dashboard</h1>
+
+<p class="subtitle">
+
+Transaction Fraud Detection System
+
+</p>
+
+<hr>
+
+<div class="card">
+
+<h2>📈 Dataset Statistics</h2>
+
+<p><strong>Total Transactions :</strong> {{ total }}</p>
+
+<p><strong>Fraud Transactions :</strong> {{ fraud }}</p>
+
+<p><strong>Genuine Transactions :</strong> {{ genuine }}</p>
+
+</div>
+
+<hr>
+
+<div class="card">
+
+<h2>🏆 Best Machine Learning Model</h2>
+
+<p><strong>Algorithm :</strong> Random Forest</p>
+
+<p><strong>Accuracy :</strong> 94.5%</p>
+
+<p><strong>Status :</strong> Selected for Deployment</p>
+
+</div>
+
+<hr>
+
+<h2>📋 Model Accuracy Comparison</h2>
+
+<table>
+
+<tr>
+
+<th>Algorithm</th>
+
+<th>Accuracy (%)</th>
+
+</tr>
+
+{% for model, score in accuracy.items() %}
+
+<tr>
+
+<td>{{ model }}</td>
+
+<td>{{ score }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<hr>
+
+<h2>📊 Accuracy Comparison Chart</h2>
+
+<img src="{{ url_for('static', filename='accuracy.png') }}">
+
+<hr>
+
+<h2>🥧 Fraud Distribution</h2>
+
+<img src="{{ url_for('static', filename='pie.png') }}">
+
+<hr>
+
+
+<hr>
+
+<div class="card">
+
+<h2>⚙ Project Workflow</h2>
+
+<p>
+
+Dataset
+
+<br>⬇<br>
+
+Data Cleaning
+
+<br>⬇<br>
+
+Feature Encoding
+
+<br>⬇<br>
+
+Feature Scaling
+
+<br>⬇<br>
+
+Machine Learning Models
+
+<br>⬇<br>
+
+Random Forest Selected
+
+<br>⬇<br>
+
+Model Saved (.pkl)
+
+<br>⬇<br>
+
+Flask Web Application
+
+<br>⬇<br>
+
+Live Fraud Prediction
+
+</p>
+
+</div>
+
+<hr>
+
+<div class="card">
+
+<h2>🚀 Future Scope</h2>
+
+<ul>
+
+<li>Deep Learning-based Fraud Detection</li>
+
+<li>Real-Time Transaction Monitoring</li>
+
+<li>Natural Language Processing for Complaint Analysis</li>
+
+<li>Computer Vision for Identity Verification</li>
+
+<li>Cloud Deployment (AWS/Azure)</li>
+
+<li>AI-based Customer Risk Profiling</li>
+
+</ul>
+
+</div>
+
+<br>
+
+<a href="/">
+
+<button>
+
+🏠 Back to Home
+
+</button>
+
+</a>
+
+</div>
+
+</body>
+
+</html>

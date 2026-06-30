@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>SafeBank Fraud Detection</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🛡 SafeBank</h1>
+
+<p class="subtitle">
+Transaction Fraud Detection System
+</p>
+
+<form action="/predict" method="POST">
+
+<label>Transaction Amount</label>
+
+<input
+type="number"
+step="0.01"
+name="amount"
+required>
+
+<label>Location</label>
+
+<input
+type="number"
+name="location"
+required>
+
+<label>Transaction Type</label>
+
+<input
+type="number"
+name="transaction_type"
+required>
+
+<label>Account Age (Months)</label>
+
+<input
+type="number"
+name="account_age"
+required>
+
+<label>Behavior Score</label>
+
+<input
+type="number"
+name="behavior_score"
+required>
+
+<label>Device Used</label>
+
+<input
+type="number"
+name="device"
+required>
+
+<button type="submit">
+
+Predict Transaction
+
+</button>
+
+</form>
+
+</div>
+
+</body>
+
+</html>
