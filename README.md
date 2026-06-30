@@ -302,7 +302,9 @@ This project successfully demonstrates the application of Machine Learning techn
 
 # 👩‍💻 Author
 
-**Varshitha**
+**Ganji Varshitha**
+
+**Satti BhanuPrasad Reddy**
 
 Bachelor of Technology (B.Tech)
 
